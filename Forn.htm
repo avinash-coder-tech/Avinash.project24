@@ -1,0 +1,74 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Audition Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label, input, select, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Music Audition Form</h2>
+    <form action="submit_form.php" method="post" enctype="multipart/form-data">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="category">Audition Category:</label>
+        <select id="category" name="category" required>
+            <option value="vocals">Vocals</option>
+            <option value="instrumental">Instrumental</option>
+            <option value="composition">Composition</option>
+             <option value="Music Video">Music Video</option>
+   <option value="Audio">Audio</option>
+  
+        </select>
+        
+        <label for="instrument">Instrument (if applicable):</label>
+        <input type="text" id="instrument" name="instrument">
+        
+        <label for="demo">Upload Demo (MP3, WAV):</label>
+        <input type="file" id="demo" name="demo" accept="audio/*" required>
+        
+        <label for="message">Additional Notes:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        
+        <button type="submit">Submit Audition</button>
+    </form>
+</body>
+</html>
