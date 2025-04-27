@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Platform Details</title>
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1605096024599-b73d0069be82') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #ff9f00;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 159, 0, 0.8);
+    }
+
+    /* Content Section */
+    .content-section {
+      margin-top: 100px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 2s ease;
+    }
+
+    h2 {
+      color: #ff9f00;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    /* Buttons for Sections */
+    .button {
+      padding: 12px 20px;
+      background-color: #FF7F50;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .button:hover {
+      background-color: #FF6347;
+    }
+
+    /* Section Display */
+    .section-content {
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+ 
+  <!-- Content Section -->
+  <div class="content-section">
+    <h2 id="overview">Music Platform Overview</h2>
+    <p>This platform allows users to upload music, create and manage artist profiles, listen to various tracks, and share their musical creations with the world. It also provides music streaming and subscription-based services.</p>
+    <button class="button" onclick="showSection('features')">Platform Features</button>
+    <button class="button" onclick="showSection('requirements')">Technical Requirements</button>
+    
+    <!-- Features Section -->
+    <div class="section-content" id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Music upload and streaming</li>
+        <li>Artist profiles with bio, discography, and music galleries</li>
+        <li>Subscription and monetization options</li>
+        <li>Interactive search and recommendations</li>
+        <li>Music licensing and rights management</li>
+      </ul>
+    </div>
+
+    <!-- Requirements Section -->
+    <div class="section-content" id="requirements">
+      <h2>Technical Requirements</h2>
+      <ul>
+        <li>Backend: Node.js or Python (Django/Flask)</li>
+        <li>Frontend: React, Angular, or Vue.js</li>
+        <li>Database: MySQL, PostgreSQL, or MongoDB</li>
+        <li>Cloud Hosting: AWS, Azure, or Google Cloud</li>
+        <li>Authentication: OAuth 2.0 for secure login</li>
+        <li>Payment Gateway: Stripe or PayPal for subscriptions</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Function to show specific sections dynamically
+    function showSection(sectionId) {
+      // Hide all sections
+      const allSections = document.querySelectorAll('.section-content');
+      allSections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // Show the selected section
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

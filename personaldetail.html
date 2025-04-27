@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MusicVibe Login</title>
+  <title>MusicVibe Personal Details</title>
   <style>
     /* Resetting basic styles */
     * {
@@ -14,33 +14,38 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1575067344365-d82b1e650381') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1522092285815-6040a17c9b53') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
     }
 
-    .login-container {
+    .details-container {
       background: rgba(0, 0, 0, 0.7);
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       width: 100%;
-      max-width: 400px;
+      max-width: 700px;
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="email"],
+    input[type="password"],
+    input[type="file"],
+    select,
+    textarea {
       width: 100%;
       padding: 15px;
       margin-bottom: 20px;
@@ -53,7 +58,11 @@
     }
 
     input[type="text"]:focus,
-    input[type="password"]:focus {
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="file"]:focus,
+    select:focus,
+    textarea:focus {
       border: 2px solid #FF7F50; /* Coral color */
       outline: none;
     }
@@ -74,19 +83,6 @@
       background-color: #FF6347; /* Darker Coral */
     }
 
-    .forgot-password {
-      color: white;
-      font-size: 1rem;
-      text-decoration: underline;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: color 0.3s ease;
-    }
-
-    .forgot-password:hover {
-      color: #FF7F50;
-    }
-
     /* Animation */
     @keyframes fadeIn {
       from {
@@ -102,23 +98,43 @@
 </head>
 <body>
 
-  <div class="login-container">
-    <h1>Adah Music Login 🎶</h1>
+  <div class="details-container">
+    <h1>Update Your Personal Details 🎶</h1>
     
-    <form action="/login" method="POST">
-      <!-- Username input -->
-      <input type="text" name="username" placeholder="Username" required>
+    <form action="/update-details" method="POST">
+      <!-- Name Input -->
+      <input type="text" name="name" placeholder="Full Name" required>
 
-      <!-- Password input -->
+      <!-- Email Input -->
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <!-- Password Input -->
       <input type="password" name="password" placeholder="Password" required>
 
-      <!-- Login Button -->
-      <button type="submit"><a href="profileper.html">Login</a></button>
-      
-      
-      <!-- Forgot Password -->
-      <p class="forgot-password">Forgot Password?</p>
-    </form>
+      <!-- Gender Select -->
+      <select name="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Audition Name Input -->
+      <input type="text" name="audition_name" placeholder="Audition Name" required>
+
+      <!-- Address Textarea -->
+      <textarea name="address" placeholder="Address" rows="4" required></textarea>
+
+      <!-- City Input -->
+      <input type="text" name="city" placeholder="City" required>
+
+      <!-- State Input -->
+      <input type="text" name="state" placeholder="State" required>
+
+      <!-- Submit Button -->
+      <button type="submit"><a href="subscription.html">Update Details</a></button>
+    </form><br><br>
+    <a href="terms.html"><p>Terms and Conditions</p></a>
   </div>
 
 </body>

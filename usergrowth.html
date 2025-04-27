@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Growth - MusicVibe</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      animation: fadeDown 2s ease;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .chart-container {
+      width: 90%;
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      animation: fadeUp 2s ease;
+    }
+
+    canvas {
+      margin-top: 20px;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>User Growth Analytics 📈</h1>
+
+  <div class="chart-container">
+    <canvas id="growthChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    const growthChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+        datasets: [{
+          label: 'New Users',
+          data: [200, 400, 600, 900, 1200, 1500, 1800, 2200],
+          backgroundColor: 'rgba(37, 211, 102, 0.2)',
+          borderColor: '#25D366',
+          borderWidth: 3,
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: 'white',
+          pointBorderColor: '#25D366',
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            }
+          },
+          x: {
+            grid: {
+              color: 'rgba(255, 255, 255, 0.1)'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white'
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

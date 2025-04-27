@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upload Your Music - MyMusic Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-up {
+      animation: fadeUp 1s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1521986329282-0436c1dc1344?crop=entropy&cs=tinysrgb&fit=crop&h=1400&w=2200');">
+
+  <div class="min-h-screen flex items-center justify-center backdrop-blur-md bg-black/50 p-8">
+
+    <div class="bg-gray-900/80 p-10 rounded-3xl max-w-3xl w-full fade-up">
+
+      <h1 class="text-4xl font-bold mb-6 text-center text-green-400">🚀 Upload Your Music</h1>
+      <p class="text-center text-gray-400 mb-10">Share your track with the world!</p>
+
+      <form class="space-y-6">
+
+        <!-- Song Name -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">🎵 Song Title</label>
+          <input type="text" placeholder="Enter song title" class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <!-- Artist Name -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">👤 Artist Name</label>
+          <input type="text" placeholder="Enter artist name" class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <!-- Upload Cover Image -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">🖼️ Cover Image</label>
+          <input type="file" accept="image/*" class="w-full p-3 rounded-xl bg-gray-800 text-white cursor-pointer" required>
+        </div>
+
+        <!-- Upload Audio -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">🎧 Upload Song (mp3, wav)</label>
+          <input type="file" accept="audio/*" class="w-full p-3 rounded-xl bg-gray-800 text-white cursor-pointer" required>
+        </div>
+
+        <!-- Genre Selection -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">🎼 Genre</label>
+          <select class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option value="">Select genre</option>
+            <option>Pop</option>
+            <option>Rock</option>
+            <option>Hip-Hop</option>
+            <option>Electronic</option>
+            <option>Jazz</option>
+            <option>Classical</option>
+          </select>
+        </div>
+
+        <!-- Upload Button -->
+        <div class="text-center">
+          <button type="submit" class="bg-green-500 hover:bg-green-400 text-black font-bold py-3 px-10 rounded-full transition transform hover:scale-105">
+            <a href="payment2.html">🚀 Upload Now</a>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+

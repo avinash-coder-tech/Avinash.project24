@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 Artists - MusicVibe</title>
+  <style>
+    /* Resetting basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1598408534695-68da8b3462b0') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar a {
+      color: #ff9f00;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 159, 0, 0.8);
+    }
+
+    /* Artists Container */
+    .artists-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Individual Artist Card */
+    .artist-card {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-10px);
+      background-color: rgba(255, 159, 0, 0.8);
+    }
+
+    .artist-card h3 {
+      font-size: 1.6rem;
+      color: #ff7f50;
+      margin-bottom: 15px;
+    }
+
+    .artist-card p {
+      font-size: 1.1rem;
+      color: #ff9f00;
+      margin-bottom: 15px;
+    }
+
+    .artist-card iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .follow-btn {
+      padding: 10px 20px;
+      background-color: #FF7F50;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .follow-btn:hover {
+      background-color: #FF6347;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="navbar">
+    <a href="/home">Home</a>
+    <a href="/artist">Artist</a>
+    <a href="/subscription">Subscription</a>
+  </div>
+
+  <!-- Artists Section -->
+  <div class="artists-container" id="artist-container">
+    <!-- Artist Cards will be dynamically added here using JavaScript -->
+  </div>
+
+  <script>
+    // Array of artist data (name, description, and YouTube link)
+    const artists = [
+      { name: "John Doe", description: "Famous Rock Artist", videoLink: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+      { name: "Jane Smith", description: "Jazz Musician Extraordinaire", videoLink: "https://www.youtube.com/embed/5qap5aO4i9A" },
+      { name: "Michael Green", description: "Electronic Dance Producer", videoLink: "https://www.youtube.com/embed/ZwKh4R6I0o4" },
+      { name: "Amy Blue", description: "Pop Singer", videoLink: "https://www.youtube.com/embed/J---aiyznGQ" },
+      { name: "David Black", description: "Classical Composer", videoLink: "https://www.youtube.com/embed/o-50FhBHz9M" },
+      { name: "Artist 6", description: "Folk Singer", videoLink: "https://www.youtube.com/embed/xyz" },
+      { name: "Artist 7", description: "Blues Musician", videoLink: "https://www.youtube.com/embed/xyz" },
+      { name: "Artist 8", description: "Reggae Artist", videoLink: "https://www.youtube.com/embed/xyz" },
+      { name: "Artist 9", description: "Country Singer", videoLink: "https://www.youtube.com/embed/xyz" },
+      { name: "Artist 10", description: "Indie Band", videoLink: "https://www.youtube.com/embed/xyz" },
+      // Add more artists to make a total of 100 artists
+    ];
+
+    // Function to create and display artist cards
+    function createArtistCards() {
+      const container = document.getElementById('artist-container');
+
+      artists.forEach(artist => {
+        const artistCard = document.createElement('div');
+        artistCard.classList.add('artist-card');
+        
+        artistCard.innerHTML = `
+          <h3>${artist.name}</h3>
+          <p>${artist.description}</p>
+          <iframe src="${artist.videoLink}" title="${artist.name}'s Music Video"></iframe>
+          <button class="follow-btn" onclick="followArtist('${artist.name}')">Follow</button>
+        `;
+        
+        container.appendChild(artistCard);
+      });
+    }
+
+    // Function to handle follow button click
+    function followArtist(artistName) {
+      alert(`You have followed ${artistName}!`);
+      // Here you can integrate with backend to track user follows
+      // Example: AJAX call to backend server to save this action
+    }
+
+    // Call the function to create and display artist cards
+    createArtistCards();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabs Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-950 min-h-screen flex flex-col items-center text-white p-8">
+
+  <!-- Navigation Tabs -->
+  <nav class="w-full max-w-4xl flex justify-between mb-10 bg-gray-800 rounded-full p-2">
+    <button ><a href="home.html">Home</a></button>
+    <button > <a href="already.html">VISITORS<a></button>
+    <button ><a href="spotify.html">SPOTIFY</a></button>
+    <button ><a href="revenue.html">REVENUE</a></button>
+    <button ><a href="youtube.html">YOUTUBE</a></button>
+    <button ><a href="about2.html">ABOUTUSs</a></button>
+  </nav>
+
+  <!-- Tab Content -->
+  <div id="tab-content" class="w-full max-w-4xl bg-gray-800 rounded-2xl p-8 fade">
+    <h1 class="text-3xl font-bold mb-4">🏠 Welcome Home!</h1>
+    <p>This is the home page. Explore all the sections using the tabs above.</p>
+  </div><br><br><br><br><br><br>b <picture>
+    <source media="(min-width: )" srcset="">
+    <img src="" alt="">
+  </picture>
+  <nav class="w-full max-w-4xl flex justify-between mb-10 bg-gray-800 rounded-full p-2">
+  <button style="align-items: center;"><a href="feedbackk.html">FEEDBACK</a></button>
+</nav>
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const content = document.getElementById('tab-content');
+
+    const tabData = {
+      home: `<h1 class="text-3xl font-bold mb-4">🏠 Welcome Home!</h1><p>This is the home page. Explore all the sections using the tabs above.</p>`,
+      revenue: `<h1 class="text-3xl font-bold mb-4">💰 Revenue Stats</h1><p>Here you can track your earnings and financial growth.</p>`,
+      spotify: `<h1 class="text-3xl font-bold mb-4">🎵 Spotify Playlist</h1><p>Manage and view your Spotify playlists and analytics.</p>`,
+      youtube: `<h1 class="text-3xl font-bold mb-4">📺 YouTube Dashboard</h1><p>Monitor your YouTube channel stats and videos.</p>`,
+      about: `<h1 class="text-3xl font-bold mb-4">📖 About Us</h1><p>Learn more about our mission and the team behind this platform.</p>`,
+      visitors: `<h1 class="text-3xl font-bold mb-4">👥 Visitors Report</h1><p>See who visited your profiles and track traffic trends.</p>`,
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('bg-gray-700'));
+        // Add active class to current tab
+        tab.classList.add('bg-gray-700');
+        // Update tab content
+        content.innerHTML = tabData[tab.dataset.tab];
+        content.classList.remove('fade');
+        void content.offsetWidth; // Trick to restart animation
+        content.classList.add('fade');
+      });
+    });
+  </script>
+
+</body>
+</html>

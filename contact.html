@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - MusicVibe</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .contact-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      animation: fadeIn 2s ease;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: slideInDown 1.5s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.4s, transform 0.4s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>Have a question, suggestion, or just want to say hi? 👋 <br> Message us directly on WhatsApp!</p>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/9315390863" target="_blank" class="whatsapp-btn">
+      Message on WhatsApp
+    </a>
+  </div>
+
+</body>
+</html>

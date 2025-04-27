@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Songs Playlist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex flex-col items-center p-8 text-white">
+
+  <div class="text-center mb-10 fade">
+    <h1 class="text-5xl font-extrabold mb-4">🎵 New Vibes Playlist</h1>
+    <p class="text-lg text-gray-300">Fresh drops just for you. Hit play & vibe out! 🚀</p>
+  </div>
+
+  <div class="w-full max-w-3xl bg-gray-800/60 backdrop-blur-md rounded-3xl p-6 shadow-2xl space-y-4 fade">
+    <!-- Song 1 -->
+    <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-700 transition">
+      <div>
+        <h2 class="text-xl font-bold">1. "Lost Souls" - Zayn</h2>
+        <p class="text-sm text-gray-400">Pop / Soul</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 rounded-full">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-700 transition">
+      <div>
+        <h2 class="text-xl font-bold">2. "Golden Hour" - JVKE</h2>
+        <p class="text-sm text-gray-400">Pop</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 rounded-full">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-700 transition">
+      <div>
+        <h2 class="text-xl font-bold">3. "Paint The Town Red" - Doja Cat</h2>
+        <p class="text-sm text-gray-400">Hip-Hop</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 rounded-full">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-700 transition">
+      <div>
+        <h2 class="text-xl font-bold">4. "Calm Down" - Rema, Selena Gomez</h2>
+        <p class="text-sm text-gray-400">Afrobeat</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 rounded-full">
+        ▶ Play
+      </button>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-700 transition">
+      <div>
+        <h2 class="text-xl font-bold">5. "Flowers" - Miley Cyrus</h2>
+        <p class="text-sm text-gray-400">Pop</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 rounded-full">
+        ▶ Play
+      </button>
+    </div>
+
+  </div>
+
+</body>
+</html>

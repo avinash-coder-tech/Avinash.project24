@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instruments - Music Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-up {
+      animation: fadeUp 1.2s ease-in-out;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white p-8">
+
+  <div class="text-center mb-10 fade-up">
+    <h1 class="text-5xl font-extrabold mb-4">🎶 Instruments Behind the Music</h1>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+      Explore the key instruments that bring the beats and melodies to life on our platform! 🎸🎹🥁🎷
+    </p>
+  </div>
+
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto fade-up">
+
+    <!-- Guitar -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1598387843285-fb3d11be1c40?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="Guitar" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🎸 Guitar</h2>
+      <p class="text-gray-300">The heart of rock, pop, and blues. Guitars add melody, harmony, and soul to countless tracks.</p>
+    </div>
+
+    <!-- Piano -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1525107482212-3e3f60fd8c32?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="Piano" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🎹 Piano</h2>
+      <p class="text-gray-300">Pianos bring rich melodies and emotional depth to ballads, jazz, pop, and classical music.</p>
+    </div>
+
+    <!-- Drums -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1598387843275-708fa06bfa72?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="Drums" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🥁 Drums</h2>
+      <p class="text-gray-300">The rhythm and heartbeat of every track, drums drive the tempo and energy of a song.</p>
+    </div>
+
+    <!-- Saxophone -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1584643185770-75857e1b9dfb?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="Saxophone" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🎷 Saxophone</h2>
+      <p class="text-gray-300">A soulful sound perfect for jazz, blues, and even pop music. It adds flavor and emotion.</p>
+    </div>
+
+    <!-- Violin -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="Violin" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🎻 Violin</h2>
+      <p class="text-gray-300">Essential for classical music and modern orchestral pieces, violins create deep emotional connections.</p>
+    </div>
+
+    <!-- DJ Set -->
+    <div class="bg-gray-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition transform">
+      <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?crop=entropy&cs=tinysrgb&fit=crop&h=300&w=500" alt="DJ Set" class="rounded-xl mb-4">
+      <h2 class="text-2xl font-bold mb-2">🎧 DJ Mixer</h2>
+      <p class="text-gray-300">In EDM, hip-hop, and pop, DJs create and remix beats that light up the dance floor!</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Platform - Rate & Review</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade {
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .star:hover,
+    .star.hovered {
+      color: gold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-cover bg-center flex items-center justify-center p-8 text-white" style="background-image: url('https://images.unsplash.com/photo-1511376777868-611b54f68947?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=1600');">
+
+  <div class="bg-black/60 backdrop-blur-md p-10 rounded-2xl shadow-2xl w-full max-w-md fade">
+    <h1 class="text-3xl font-bold mb-6 text-center">🎶 Rate This Song!</h1>
+
+    <!-- Star Rating -->
+    <div id="stars" class="flex justify-center mb-6 text-3xl">
+      <span class="star transition" data-value="1">★</span>
+      <span class="star transition" data-value="2">★</span>
+      <span class="star transition" data-value="3">★</span>
+      <span class="star transition" data-value="4">★</span>
+      <span class="star transition" data-value="5">★</span>
+    </div>
+
+    <!-- Review Form -->
+    <form id="reviewForm" class="flex flex-col gap-4">
+      <textarea id="reviewText" class="bg-gray-700/60 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" rows="4" placeholder="Tell us what you think..."></textarea>
+      <button type="submit" class="bg-green-500 hover:bg-green-400 rounded-full py-3 text-lg font-semibold transition"><a href="thank.html">Submit Review</a></button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden mt-6 text-green-400 text-center">
+      ✅ Thanks for sharing your vibe!
+    </div>
+  </div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('hovered'));
+        const val = parseInt(star.dataset.value);
+        for (let i = 0; i < val; i++) {
+          stars[i].classList.add('hovered');
+        }
+      });
+
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.value);
+      });
+
+      star.addEventListener('mouseout', () => {
+        stars.forEach(s => s.classList.remove('hovered'));
+        if (selectedRating > 0) {
+          for (let i = 0; i < selectedRating; i++) {
+            stars[i].classList.add('hovered');
+          }
+        }
+      });
+    });
+
+    const form = document.getElementById('reviewForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const reviewText = document.getElementById('reviewText').value.trim();
+
+      if (selectedRating === 0 || reviewText === "") {
+        alert("Please rate and write a review before submitting!");
+        return;
+      }
+
+      form.reset();
+      stars.forEach(s => s.classList.remove('hovered'));
+      selectedRating = 0;
+      successMessage.classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>

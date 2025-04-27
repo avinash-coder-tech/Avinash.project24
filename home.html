@@ -1,24 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <style>
-h1{
-        color: skyblue;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MusicVibe - Home</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-</style>
 
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1497032205916-ac775f0649ae') no-repeat center center/cover;
+      min-height: 100vh;
+      color: white;
+    }
+
+    /* Navbar styling */
+    nav {
+      width: 100%;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.7); /* semi-transparent navbar */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    ul li a:hover {
+      color: #ff5e57;
+    }
+
+    /* Main Content */
+    .content {
+      padding-top: 120px; /* space below navbar */
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .content p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    #box{
+
+        width: 100%;
+        padding: 20px 50px;
+        background: rgba(0, 0, 0, 0.7); /* semi-transparent navbar */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+   
+  </style>
 </head>
 <body>
-    <center>
-        <h1>ABOUT US</h1><br><br><br><br>
-        <h1>ANALYTICS</h1><br><br><br><br>
-        <h1>DASHBOARD</h1><br><br><br><br>
-        <h1>CONTACT US</h1><br><br><br><br>
-    
-    </center>
+
+  <nav>
+    <div class="logo">Adah Music</div>
+    <ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="analytics.html">Analytics</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>Feel the Beat</h1>
+    <p>Discover new songs, explore musical instruments, and dive into a world full of rhythm and vibes. 🎶</p>
+  </div>
+  <br><br><br><br>
+  <div class="box2">
+    <button><a href="login.html">LOGIN</a></button>
+    <button><a href="form.html">FORM</a></button>
+</div>
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Ketsa/Raising_Frequecy/Ketsa_-_Energize.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
 </html>

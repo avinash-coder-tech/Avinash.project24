@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You - Music Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-cover bg-center flex flex-col items-center justify-center p-8 text-white" style="background-image: url('https://images.unsplash.com/photo-1517263904808-5dc96cda69a5?crop=entropy&cs=tinysrgb&fit=crop&h=900&w=1600');">
+
+  <div class="bg-black/60 backdrop-blur-lg p-12 rounded-3xl shadow-2xl text-center fade-in">
+    <h1 class="text-5xl font-extrabold mb-6 pulse">🎶 Thank You!</h1>
+    <p class="text-lg mb-8 max-w-xl mx-auto">
+      Your love for music keeps the vibe alive!  
+      Thanks for being part of our journey.  
+      Stay tuned for more beats, drops, and unforgettable moments! 🎧✨
+    </p>
+    <a href="home.html" class="inline-block bg-green-500 hover:bg-green-400 text-black font-bold py-3 px-8 rounded-full text-lg transition">
+      Back to Home
+    </a>
+  </div>
+
+</body>
+</html>

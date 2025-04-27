@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Platform - Revenue</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1513120452686-e944b30ba97c') no-repeat center center/cover;
+      background-size: cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+    }
+
+    .navbar a {
+      color: #ff9f00;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff9f00;
+      margin-bottom: 20px;
+    }
+
+    .revenue-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .revenue-card {
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 20px;
+      width: 30%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .revenue-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .revenue-card h3 {
+      color: #ff9f00;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .revenue-card p {
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+    .transactions-graph {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #1f1f1f;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .transactions-graph canvas {
+      width: 100%;
+      height: 400px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: #ff9f00;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="artist.html">Artists</a>
+    <a href="revenue.html">Revenue</a>
+  </div>
+
+  <!-- Revenue Container -->
+  <div class="container">
+    <h1>Music Platform Revenue Overview</h1>
+
+    <!-- Revenue Stats -->
+    <div class="revenue-stats">
+      <div class="revenue-card">
+        <h3>Total Revenue</h3>
+        <p>$1,250,000</p>
+      </div>
+      <div class="revenue-card">
+        <h3>Daily Revenue</h3>
+        <p>$3,500</p>
+      </div>
+      <div class="revenue-card">
+        <h3>Monthly Revenue</h3>
+        <p>$105,000</p>
+      </div>
+    </div>
+
+    <!-- Transactions Graph -->
+    <div class="transactions-graph">
+      <h3>Revenue Transactions (Last 30 Days)</h3>
+      <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="footer">
+      <p>Revenue Page - Powered by Music Platform</p>
+    </div>
+  </div>
+
+  <!-- Chart.js Library for Graph -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Data for the transactions graph
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    const revenueChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13', 'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23', 'Day 24', 'Day 25', 'Day 26', 'Day 27', 'Day 28', 'Day 29', 'Day 30'],
+        datasets: [{
+          label: 'Revenue in USD',
+          data: [1500, 1800, 1600, 2000, 2200, 2500, 2800, 2400, 2300, 3000, 3200, 3300, 3400, 3100, 3500, 3700, 3900, 4000, 4200, 4500, 4600, 4700, 5000, 5100, 5200, 5300, 5500, 5800, 6000, 6200],
+          borderColor: '#ff9f00',
+          backgroundColor: 'rgba(255, 159, 0, 0.2)',
+          borderWidth: 2,
+          tension: 0.4,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            ticks: {
+              font: {
+                size: 12,
+                family: 'Poppins',
+              }
+            }
+          },
+          y: {
+            ticks: {
+              font: {
+                size: 12,
+                family: 'Poppins',
+              },
+              callback: function(value) {
+                return '$' + value;
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+          },
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - MusicVibe</title>
+  <style>
+    /* Resetting basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1566265823-1f5428d89736') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .terms-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 900px;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      color: #ff9f00;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 30px 0 10px;
+      text-align: left;
+      color: #ff7f50;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .accept-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .accept-container input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .accept-btn {
+      padding: 15px 30px;
+      background-color: #ff6347;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .accept-btn:hover {
+      background-color: #ff9f00;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="terms-container">
+    <h1>Terms and Conditions 🎶</h1>
+
+    <h2>Welcome to MusicVibe!</h2>
+    <p>
+      These Terms and Conditions ("Terms") govern your access to and use of the MusicVibe platform, including the website and mobile applications (collectively referred to as "the Service"). By accessing or using the Service, you agree to comply with these Terms and all applicable laws.
+    </p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By using our Service, you agree to the terms outlined in this agreement. If you do not agree with these terms, please do not use the Service.
+    </p>
+
+    <h2>2. User Responsibilities</h2>
+    <p>
+      As a user of MusicVibe, you agree to:
+    </p>
+    <ul>
+      <li>Provide accurate and complete information when creating an account.</li>
+      <li>Use the Service only for lawful purposes.</li>
+      <li>Respect the intellectual property rights of others.</li>
+      <li>Not upload or share content that is illegal, harmful, or offensive.</li>
+    </ul>
+
+    <h2>3. Account Security</h2>
+    <p>
+      You are responsible for maintaining the confidentiality of your account and password. Notify us immediately if you believe your account has been compromised.
+    </p>
+
+    <h2>4. Subscription and Payments</h2>
+    <p>
+      Some features of MusicVibe require a subscription. By subscribing, you agree to pay the applicable fees. Subscriptions are billed on a recurring basis and can be canceled at any time.
+    </p>
+
+    <h2>5. Content Ownership</h2>
+    <p>
+      All content on MusicVibe, including music, artwork, and text, is owned by MusicVibe or its licensors and is protected by copyright laws. You are granted a non-exclusive, non-transferable license to use the Service for personal, non-commercial use.
+    </p>
+
+    <h2>6. Termination</h2>
+    <p>
+      We reserve the right to suspend or terminate your access to MusicVibe if you violate these Terms. You may also cancel your subscription at any time.
+    </p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>
+      MusicVibe is not liable for any damages arising from the use of the Service, including but not limited to loss of data or profits.
+    </p>
+
+    <h2>8. Governing Law</h2>
+    <p>
+      These Terms are governed by the laws of [Your Country/State]. Any disputes will be resolved in the appropriate courts in [Your City/Country].
+    </p>
+
+    <h2>9. Changes to the Terms</h2>
+    <p>
+      We reserve the right to modify these Terms at any time. We will notify users of any significant changes. Continued use of the Service after changes indicates acceptance of the updated Terms.
+    </p>
+
+    <div class="accept-container">
+      <label>
+        <input type="checkbox" required> I agree to the <a href="/terms" style="color: #ff9f00;">Terms and Conditions</a>
+      </label>
+      <br>
+      <button class="accept-btn" onclick="window.location.href='/signup'">Accept and Continue</button>
+    </div>
+
+    <h2>10. Contact Us</h2>
+    <p>
+      If you have any questions about these Terms, please contact us at: <br>
+      <strong>Email:</strong> support@musicvibe.com
+    </p>
+  </div>
+
+</body>
+</html>

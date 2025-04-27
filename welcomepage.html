@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to MusicVibe</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1511376777868-611b54f68947') no-repeat center center/cover;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #ff5e57;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #ff1e00;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Adah Music</h1>
+  <p>Your journey into music starts here.</p>
+  <a href="home.html" class="btn">Explore</a>
+  <audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Komiku/Its_time_for_adventure/Komiku_-_05_-_Level_Up.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  
+</body>
+</html>

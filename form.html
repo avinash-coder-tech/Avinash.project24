@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MusicVibe Login</title>
+  <title>MusicVibe Audition Form</title>
   <style>
-    /* Resetting basic styles */
     * {
       margin: 0;
       padding: 0;
@@ -14,33 +13,36 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1575067344365-d82b1e650381') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1512110955730-cbd3c1f8d98d') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      text-align: center;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
     }
 
-    .login-container {
+    .audition-container {
       background: rgba(0, 0, 0, 0.7);
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       width: 100%;
-      max-width: 400px;
+      max-width: 600px;
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     input[type="text"],
-    input[type="password"] {
+    input[type="file"],
+    select {
       width: 100%;
       padding: 15px;
       margin-bottom: 20px;
@@ -53,7 +55,8 @@
     }
 
     input[type="text"]:focus,
-    input[type="password"]:focus {
+    input[type="file"]:focus,
+    select:focus {
       border: 2px solid #FF7F50; /* Coral color */
       outline: none;
     }
@@ -74,19 +77,6 @@
       background-color: #FF6347; /* Darker Coral */
     }
 
-    .forgot-password {
-      color: white;
-      font-size: 1rem;
-      text-decoration: underline;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: color 0.3s ease;
-    }
-
-    .forgot-password:hover {
-      color: #FF7F50;
-    }
-
     /* Animation */
     @keyframes fadeIn {
       from {
@@ -102,22 +92,28 @@
 </head>
 <body>
 
-  <div class="login-container">
-    <h1>Adah Music Login 🎶</h1>
+  <div class="audition-container">
+    <h1>Submit Your Music Audition 🎶</h1>
     
-    <form action="/login" method="POST">
-      <!-- Username input -->
-      <input type="text" name="username" placeholder="Username" required>
+    <form action="/submit-audition" method="POST" enctype="multipart/form-data">
+      <!-- Name Input -->
+      <input type="text" name="name" placeholder="Your Name" required>
+     
 
-      <!-- Password input -->
-      <input type="password" name="password" placeholder="Password" required>
+      <!-- Audition Type Select -->
+      <select name="audition_type" required>
+        <option value="" disabled selected>Select Audition Type</option>
+        <option value="video_music">Video Music</option>
+        <option value="audio_music">Audio Music</option>
+        <option value="beats">Beats</option>
+        <option value="lyrics">Lyrics</option>
+      </select>
 
-      <!-- Login Button -->
-      <button type="submit"><a href="profileper.html">Login</a></button>
-      
-      
-      <!-- Forgot Password -->
-      <p class="forgot-password">Forgot Password?</p>
+      <!-- File Upload -->
+      <input type="file" name="file" accept="audio/*,video/*,text/*" required>
+
+      <!-- Submit Button -->
+      <button type="submit"><a href="personaldetail.html">Submit Audition</a></button>
     </form>
   </div>
 

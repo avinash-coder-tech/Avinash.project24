@@ -1,0 +1,127 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+}
+
+/* Background */
+.background {
+    position: relative;
+    height: 100%;
+}
+
+/* Title */
+.title {
+    font-size: 3rem;
+    margin-top: 30px;
+    color: #ffdb58;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animation for Floating Notes */
+.music-notes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: floatNotes 10s ease-in-out infinite;
+}
+
+.note {
+    font-size: 3rem;
+    margin: 10px;
+    animation: floatUp 3s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+}
+
+/* Animation for floating up notes */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sound Waves Animation */
+.sound-wave {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    animation: pulseWave 2s infinite;
+}
+
+.wave {
+    height: 10px;
+    width: 30px;
+    background-color: #ffdb58;
+    border-radius: 5px;
+    animation: waveAnimation 1.5s infinite ease-in-out;
+}
+
+.wave-1 {
+    animation-delay: 0s;
+}
+
+.wave-2 {
+    animation-delay: 0.2s;
+}
+
+.wave-3 {
+    animation-delay: 0.4s;
+}
+
+/* Animations for sound wave */
+@keyframes pulseWave {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(2);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+/* Fade-in for elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

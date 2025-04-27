@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Details</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1605096024599-b73d0069be82') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      margin-top: 80px;
+      text-align: left;
+      animation: fadeIn 2s ease;
+    }
+
+    h2 {
+      color: #ff9f00;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+    }
+
+    button {
+      background-color: #ff9f00;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff6347;
+    }
+
+    .link {
+      margin-top: 20px;
+      display: block;
+      color: #ff9f00;
+      font-size: 1.1rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Enter Your Personal Details</h2>
+    <form id="personalDetailsForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <select id="gender" required>
+        <option value="" disabled selected>Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="file" id="profileImage" accept="image/*" onchange="previewImage()" required>
+      <button type="button" onclick="submitDetails()">Submit</button>
+    </form>
+    <a href="profile.html" class="link">Go to Profile Page</a>
+  </div>
+
+  <script>
+    function previewImage() {
+      const file = document.getElementById('profileImage').files[0];
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        localStorage.setItem('profileImage', reader.result);
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function submitDetails() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const gender = document.getElementById('gender').value;
+
+      if (name && email && password && gender) {
+        // Store the data in localStorage to access on the profile page
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('gender', gender);
+
+        // Redirect to Profile Page
+        window.location.href = 'profile.html';
+      } else {
+        alert("Please fill all fields and upload an image.");
+      }
+    }
+  </script>
+
+</body>
+</html>

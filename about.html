@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us - MusicVibe</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .about-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      animation: slideIn 2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-container">
+    <h1>About Adah Music</h1>
+    <p>
+      MusicVibe is more than just a music platform — it's a global community of artists, creators, and listeners. 
+      We bring together the beauty of melodies, the energy of instruments, and the pulse of rhythm in one place.
+      Whether you're discovering new tracks, connecting with musicians, or diving deep into analytics, 
+      MusicVibe is your musical universe. 🎶🌟
+    </p>
+  </div>
+
+</body>
+</html>

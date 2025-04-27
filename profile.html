@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1605096024599-b73d0069be82') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .box1{
+      text-align: center;
+      color: aliceblue;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: greenyellow;
+      border-radius: 10px;
+      position: absolute;
+      top: 20px;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
+  
+
+    .profile-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+      animation: fadeIn 2s ease;
+    }
+
+    h2 {
+      color: #ff9f00;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #ff9f00;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .link {
+      margin-top: 20px;
+      display: block;
+      color: #ff9f00;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+  <nav>
+    <button><a href="tabs.html">ALL TABS</a></button>
+    
+  </nav></div>
+
+  <div class="profile-container">
+    <h2>Your Profile</h2>
+    <img id="profileImageDisplay" src="" alt="Profile Image">
+    <p id="profileName">Name: </p>
+    <p id="profileEmail">Email: </p>
+    <p id="profileGender">Gender: </p>
+    <a href="index.html" class="link">Back to Personal Details</a>
+  </div>
+  
+
+  <script>
+    // Load the stored user data from localStorage
+    window.onload = function() {
+      const name = localStorage.getItem('name');
+      const email = localStorage.getItem('email');
+      const gender = localStorage.getItem('gender');
+      const image = localStorage.getItem('profileImage');
+
+      // Display the stored data
+      document.getElementById('profileName').textContent = `Name: ${name}`;
+      document.getElementById('profileEmail').textContent = `Email: ${email}`;
+      document.getElementById('profileGender').textContent = `Gender: ${gender}`;
+      document.getElementById('profileImageDisplay').src = image ? image : 'https://via.placeholder.com/150';
+    }
+  </script>
+
+</body>
+</html>

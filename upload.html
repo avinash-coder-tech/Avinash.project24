@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload - MusicVibe</title>
+  <style>
+    /* Resetting basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1598408534695-68da8b3462b0') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar a {
+      color: #ff9f00;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 159, 0, 0.8);
+    }
+
+    /* Upload Section */
+    .upload-section {
+      margin-top: 50px;
+      animation: fadeIn 2s ease;
+    }
+
+    .upload-section h2 {
+      font-size: 2.5rem;
+      color: #ff7f50;
+      margin-bottom: 30px;
+    }
+
+    .upload-form {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .upload-form label {
+      font-size: 1.1rem;
+      color: #ff9f00;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .upload-form input[type="file"] {
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .upload-form button {
+      background-color: #FF7F50;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-form button:hover {
+      background-color: #FF6347;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="artist.html">Artist</a>
+    <a href="/upload">Upload</a>
+  </div>
+
+  <!-- Upload Section -->
+  <div class="upload-section">
+    <h2>Upload Your Music</h2>
+    <div class="upload-form">
+      <label for="file-upload">Choose your file (Audio, Video, Lyrics, Beats):</label>
+      <input type="file" id="file-upload" accept="audio/*, video/*, text/*">
+      <button onclick="handleUpload()"><a href="review.html">Upload</a></button>
+      <p id="upload-status" style="color: #ff7f50; margin-top: 10px;"></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript logic for limiting uploads to 3 files
+    let uploadedFilesCount = 0;
+
+    function handleUpload() {
+      if (uploadedFilesCount < 3) {
+        const fileInput = document.getElementById('file-upload');
+        if (fileInput.files.length > 0) {
+          uploadedFilesCount++;
+          document.getElementById('upload-status').innerText = `You have successfully uploaded ${uploadedFilesCount} file(s)!`;
+
+          if (uploadedFilesCount === 3) {
+            document.getElementById('upload-status').innerText = 'You can only upload 3 files. Please remove one before uploading a new one.';
+          }
+        }
+      } else {
+        alert('You can only upload a maximum of 3 files.');
+      }
+    }
+  </script>
+
+</body>
+</html>

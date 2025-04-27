@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment - MyMusic Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?crop=entropy&cs=tinysrgb&fit=crop&h=1200&w=2000');">
+
+  <div class="min-h-screen flex items-center justify-center backdrop-blur-md bg-black/60 p-8">
+
+    <div class="bg-gray-900/80 p-10 rounded-3xl max-w-md w-full fade-in">
+
+      <h1 class="text-4xl font-bold mb-6 text-center text-green-400">🎵 Payment Checkout</h1>
+      <p class="text-center text-gray-400 mb-10">Subscribe and unlock the full music experience!</p>
+
+      <!-- Payment Details -->
+      <div class="space-y-6">
+
+        <!-- Plan Details -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 class="text-2xl font-bold mb-2">Premium Plan</h2>
+          <p class="text-gray-300 mb-2">Unlimited Songs, Ad-free Music, Offline Listening</p>
+          <p class="text-green-400 text-xl font-bold">₹2,400</p>
+          <p class="text-gray-400 text-sm">(Billed annually / $29)</p>
+        </div>
+
+        <!-- Card Input -->
+        <div>
+          <label class="block mb-2 text-lg font-semibold">💳 Card Number</label>
+          <input type="text" placeholder="1234 5678 9012 3456" class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+
+        <!-- Expiry and CVV -->
+        <div class="flex gap-4">
+          <div class="flex-1">
+            <label class="block mb-2 text-lg font-semibold">📅 Expiry</label>
+            <input type="text" placeholder="MM/YY" class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+          </div>
+          <div class="flex-1">
+            <label class="block mb-2 text-lg font-semibold">🔒 CVV</label>
+            <input type="password" placeholder="123" class="w-full p-3 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
+          </div>
+        </div>
+
+        <!-- Pay Button -->
+        <div class="text-center mt-8">
+          <button type="submit" class="bg-green-500 hover:bg-green-400 text-black font-bold py-4 px-12 rounded-full text-lg transition transform hover:scale-105">
+            🚀 Pay ₹2,400
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

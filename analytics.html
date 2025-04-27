@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics - MusicVibe</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      animation: fadeDown 2s ease;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 2s ease;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      padding: 30px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s, background-color 0.5s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      background-color: rgba(255, 94, 87, 0.8);
+    }
+
+    .card h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Music Analytics Dashboard</h1>
+
+  <div class="cards">
+    <div class="card">
+      <a href="topsongs.html"><h2>Top Songs</h2></a>
+      <p>View your most streamed tracks.</p>
+    </div>
+    <div class="card">
+      <a href="usergrowth.html"><h2>User Growth</h2></a>
+      <p>Track your listener base over time.</p>
+    </div>
+    <div class="card">
+      <a href="revenue.html"><h2>Revenue</h2></a>
+      <p>Analyze your monthly income.</p>
+    </div>
+    <div class="card">
+      <a href="instrument.html"><h2>Instruments Used</h2></a>
+      <p>Discover trending instruments!</p>
+    </div>
+  </div>
+
+</body>
+</html>
